@@ -17,19 +17,14 @@
     </padding>
     <AnchorPane prefHeight="259.0" prefWidth="577.0">
         <children>
-            <Button layoutX="153.0" layoutY="119.0" mnemonicParsing="false" text="Eintragen" />
+            <Button layoutX="153.0" layoutY="119.0" mnemonicParsing="false" text="Eintragen" onAction="#add"/>
             <TextField fx:id="modulname" layoutX="112.0" layoutY="41.0" />
             <TextField fx:id="lp" layoutX="112.0" layoutY="67.0" />
             <TextField fx:id="note" layoutX="112.0" layoutY="93.0" />
             <Label layoutX="29.0" layoutY="45.0" text="Modulname:" />
             <Label layoutX="32.0" layoutY="71.0" prefHeight="18.0" prefWidth="62.0" text="LP/CP:" />
             <Label layoutX="29.0" layoutY="96.0" prefHeight="18.0" prefWidth="50.0" text="Note:" />
-            <TableView layoutX="289.0" layoutY="32.0" prefHeight="200.0" prefWidth="275.0">
-                <columns>
-                    <TableColumn prefWidth="115.20001220703125" text="Name" />
-                    <TableColumn prefWidth="74.4000244140625" text="LP" />
-                    <TableColumn prefWidth="84.7999267578125" text="Note" />
-                </columns>
+            <TableView fx:id="modulTableView" layoutX="289.0" layoutY="32.0" prefHeight="200.0" prefWidth="230.0">
             </TableView>
         </children></AnchorPane>
 </VBox>
