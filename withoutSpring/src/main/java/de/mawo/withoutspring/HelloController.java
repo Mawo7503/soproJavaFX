@@ -1,14 +1,74 @@
 package de.mawo.withoutspring;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class HelloController {
-    @FXML
-    private Label welcomeText;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+/**
+ * Example Class to show basic functions of JavaFX.
+ * No Error Detection. Wrong inputs may leads to crash!
+ * */
+public class HelloController implements Initializable {
 
+    ArrayList<modul> list = new ArrayList<>();
+
+    //IMPORTANT: name of each object must be equal to its name in .fxml
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    TextField modulname = new TextField();
+    @FXML
+    TextField lp = new TextField();
+    @FXML
+    TextField note = new TextField();
+
+    //Define table:
+    @FXML
+    public TableView<modul> modulTableView = new TableView<>();
+    public TableColumn<modul, String> nameColumn = new TableColumn<>("Modulname");
+    public TableColumn<modul, Integer> lpColumn = new TableColumn<>("LP");
+    public TableColumn<modul, Double> noteColumn = new TableColumn<>("Note");
+
+
+    /**
+     * You need this method to initialize a Table (and other stuff not shown here)
+     * Controller has to implements 'Initializable' for this method (@Override)
+     * */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("modulname"));
+        nameColumn.setPrefWidth(100);
+        lpColumn.setCellValueFactory(new PropertyValueFactory<>("lp"));
+        lpColumn.setPrefWidth(50);
+        lpColumn.setPrefWidth(50);
+        noteColumn.setCellValueFactory(new PropertyValueFactory<>("note"));
+        modulTableView.getColumns().addAll(nameColumn, lpColumn, noteColumn);
+     }
+
+     /**
+      * Tableview needs an ObservableList
+      * With .setItems you copy Items into the table
+      * */
+    private void loadItems() {
+        ObservableList<modul> tableList = FXCollections.observableArrayList();
+        tableList.addAll(list);
+        modulTableView.setItems(tableList);
     }
+
+    /**
+     * adds a Modul into a list after Button pressed.
+     * Get the inputs with name_of_Testfield.getText().
+     * */
+    @FXML
+    protected void add() {
+        list.add(new modul(modulname.getText(), Integer.parseInt(lp.getText()), Double.parseDouble(note.getText())));
+        loadItems();
+    }
+
 }
