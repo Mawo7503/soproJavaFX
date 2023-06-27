@@ -7,6 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Start-Point of a JavaFX programm
+ * You need both methods and the 'extends Application'
+ * If you want to use e.g. JavaFX and Spring, refer to the other project in this repo
+ * * */
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
