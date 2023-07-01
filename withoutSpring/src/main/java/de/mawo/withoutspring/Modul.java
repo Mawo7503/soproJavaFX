@@ -4,13 +4,13 @@ package de.mawo.withoutspring;
  * Only important thing to know here:
  * If you want to use a Tableview, remember that Tableview.setItems uses a .get*VarName*() standard, so a Record will create Errors!
  * */
-public class modul {
+public class Modul {
 
     private String modulname;
     private int lp;
     private Double note;
 
-    public modul(String name, int lp, double note) {
+    public Modul(String name, int lp, double note) {
         this.modulname = name;
         this.lp = lp;
         this.note = note;
