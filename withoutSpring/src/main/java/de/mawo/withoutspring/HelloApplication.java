@@ -1,6 +1,7 @@
 package de.mawo.withoutspring;
 
 import javafx.application.Application;
+import org.kordamp.bootstrapfx.BootstrapFX;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Noten verwalten");
         stage.setScene(scene);
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.show();
     }
 
