@@ -17,7 +17,7 @@
     </padding>
     <AnchorPane prefHeight="259.0" prefWidth="577.0">
         <children>
-            <Button layoutX="153.0" layoutY="119.0" mnemonicParsing="false" text="Eintragen" onAction="#add"/>
+            <Button layoutX="153.0" layoutY="119.0" mnemonicParsing="false" text="Eintragen" onAction="#add" styleClass="btn-primary"/>
             <TextField fx:id="modulname" layoutX="112.0" layoutY="41.0" />
             <TextField fx:id="lp" layoutX="112.0" layoutY="67.0" />
             <TextField fx:id="note" layoutX="112.0" layoutY="93.0" />

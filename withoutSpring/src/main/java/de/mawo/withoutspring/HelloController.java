@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
  * */
 public class HelloController implements Initializable {
 
-    ArrayList<modul> list = new ArrayList<>();
+    ArrayList<Modul> list = new ArrayList<>();
 
     //IMPORTANT: name of each object must be equal to its name in .fxml
     @FXML
@@ -30,10 +30,10 @@ public class HelloController implements Initializable {
 
     //Define table:
     @FXML
-    public TableView<modul> modulTableView = new TableView<>();
-    public TableColumn<modul, String> nameColumn = new TableColumn<>("Modulname");
-    public TableColumn<modul, Integer> lpColumn = new TableColumn<>("LP");
-    public TableColumn<modul, Double> noteColumn = new TableColumn<>("Note");
+    public TableView<Modul> modulTableView = new TableView<>();
+    public TableColumn<Modul, String> nameColumn = new TableColumn<>("Modulname");
+    public TableColumn<Modul, Integer> lpColumn = new TableColumn<>("LP");
+    public TableColumn<Modul, Double> noteColumn = new TableColumn<>("Note");
 
 
     /**
@@ -56,7 +56,7 @@ public class HelloController implements Initializable {
       * With .setItems you copy Items into the table
       * */
     private void loadItems() {
-        ObservableList<modul> tableList = FXCollections.observableArrayList();
+        ObservableList<Modul> tableList = FXCollections.observableArrayList();
         tableList.addAll(list);
         modulTableView.setItems(tableList);
     }
@@ -67,7 +67,7 @@ public class HelloController implements Initializable {
      * */
     @FXML
     protected void add() {
-        list.add(new modul(modulname.getText(), Integer.parseInt(lp.getText()), Double.parseDouble(note.getText())));
+        list.add(new Modul(modulname.getText(), Integer.parseInt(lp.getText()), Double.parseDouble(note.getText())));
         loadItems();
     }
 
