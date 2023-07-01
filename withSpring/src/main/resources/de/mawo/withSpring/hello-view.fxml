@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="de.mawo.withSpring.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <AnchorPane prefHeight="259.0" prefWidth="577.0">
+        <children>
+            <Button layoutX="153.0" layoutY="119.0" mnemonicParsing="false" text="Eintragen" onAction="#add" styleClass="btn-primary"/>
+            <TextField fx:id="modulname" layoutX="112.0" layoutY="41.0" />
+            <TextField fx:id="lp" layoutX="112.0" layoutY="67.0" />
+            <TextField fx:id="note" layoutX="112.0" layoutY="93.0" />
+            <Label layoutX="29.0" layoutY="45.0" text="Modulname:" />
+            <Label layoutX="32.0" layoutY="71.0" prefHeight="18.0" prefWidth="62.0" text="LP/CP:" />
+            <Label layoutX="29.0" layoutY="96.0" prefHeight="18.0" prefWidth="50.0" text="Note:" />
+            <TableView fx:id="modulTableView" layoutX="289.0" layoutY="32.0" prefHeight="200.0" prefWidth="230.0">
+            </TableView>
+        </children></AnchorPane>
+</VBox>
+
